@@ -1,0 +1,27 @@
+version: "2.1"
+
+services:
+
+  picocms:
+    restart: always
+    build: .
+    image: gprevost/picocms
+    container_name: dc_pico
+    command:
+      "/run.sh"
+    ports:
+     - "${HTTP_BIND:-0.0.0.0}:${HTTP_PORT:-80}:${HTTP_PORT:-80}"
+    volumes:
+      - ./data/config:/home/sites/picocms/config
+      - ./data/content:/home/sites/picocms/content
+      - ./data/plugins:/home/sites/picocms/plugins
+      - ./data/themes:/home/sites/picocms/themes
+    networks:
+      - picocms
+    environment:
+      - VIRTUAL_HOST=${PUBLIC_FQDN}
+      - VIRTUAL_PORT=${HTTP_PORT:-80}
+      - LETSENCRYPT_HOST=${PUBLIC_FQDN}
+      - LETSENCRYPT_EMAIL=${ADMIN_MAIL}
+
+
