@@ -12,10 +12,10 @@ services:
     ports:
      - "${HTTP_BIND:-0.0.0.0}:${HTTP_PORT:-80}:${HTTP_PORT:-80}"
     volumes:
-      - ./data/config:/home/sites/picocms/config
-      - ./data/content:/home/sites/picocms/content
-      - ./data/plugins:/home/sites/picocms/plugins
-      - ./data/themes:/home/sites/picocms/themes
+      - ./data/pico/config:/home/sites/picocms/config
+      - ./data/pico/content:/home/sites/picocms/content
+      - ./data/pico/plugins:/home/sites/picocms/plugins
+      - ./data/pico/themes:/home/sites/picocms/themes
     networks:
       - picocms
     environment:

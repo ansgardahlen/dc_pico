@@ -60,5 +60,3 @@ TZ=${TZ}
 
 EOF
 
-mkdir -p data/pico/pico/conf
-
