@@ -16,8 +16,6 @@ services:
       - ./data/pico/content:/home/sites/picocms/content
       - ./data/pico/plugins:/home/sites/picocms/plugins
       - ./data/pico/themes:/home/sites/picocms/themes
-    networks:
-      - picocms
     environment:
       - VIRTUAL_HOST=${PUBLIC_FQDN}
       - VIRTUAL_PORT=${HTTP_PORT:-80}
