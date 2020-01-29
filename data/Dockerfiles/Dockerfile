@@ -34,7 +34,7 @@ WORKDIR /home/sites/picocms/
 RUN composer install
 
 #RUN cp ./config/config.php.template ./config/config.php
-RUN cp ./config/config.yml.template ./config/config.php
+RUN cp ./config/config.yml.template ./config/config.yml
 
 # Install pico_edit plugin
 RUN mkdir ./plugins/pico_edit
