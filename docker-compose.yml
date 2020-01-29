@@ -4,7 +4,7 @@ services:
 
   picocms:
     restart: always
-    build: .
+    build: ./data/Dockerfiles/
     image: gprevost/picocms
     container_name: dc_pico
     command:
